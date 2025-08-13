@@ -1,4 +1,4 @@
-# 🤖 AI-Powered CV Builder
+# 🤖 AI-Powered CV Formatter
 
 A modern web application that transforms raw, unstructured CVs into professional documents using AI and cutting-edge web technologies. Upload your CV in various formats and let AI intelligently format it according to professional standards.
 
