@@ -1,0 +1,82 @@
+
+{
+  "name": "processing_jobs",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["documentId", "jobType", "status", "createdAt"],
+        "properties": {
+          "documentId": {
+            "bsonType": "string",
+            "description": "Reference to CV document being processed"
+          },
+          "jobType": {
+            "bsonType": "string",
+            "enum": ["extraction", "parsing", "formatting", "enhancement"],
+            "description": "Type of processing job"
+          },
+          "status": {
+            "bsonType": "string",
+            "enum": ["pending", "running", "completed", "failed", "retrying"],
+            "description": "Current job status"
+          },
+          "aiAgent": {
+            "bsonType": "string",
+            "enum": ["gpt-4", "gpt-3.5-turbo", "claude-3-opus", "claude-3-sonnet", "gemini-pro", "gemini-ultra"],
+            "description": "AI agent assigned to this job"
+          },
+          "input": {
+            "bsonType": "object",
+            "description": "Input data for the processing job"
+          },
+          "output": {
+            "bsonType": "object",
+            "description": "Output data from the processing job"
+          },
+          "errorMessage": {
+            "bsonType": "string",
+            "description": "Error message if job failed"
+          },
+          "retryCount": {
+            "bsonType": "int",
+            "minimum": 0,
+            "maximum": 3,
+            "description": "Number of retry attempts"
+          },
+          "processingTime": {
+            "bsonType": "number",
+            "minimum": 0,
+            "description": "Time taken to complete job in seconds"
+          },
+          "tokens": {
+            "bsonType": "object",
+            "description": "Token usage statistics"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "User who initiated the job"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Job creation timestamp"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Last update timestamp"
+          },
+          "completedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Job completion timestamp"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}

@@ -1,0 +1,41 @@
+
+/* Palatino Linotype font family setup */
+@import url('https://fonts.googleapis.com/css2?family=Palatino+Linotype:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* Global font family override */
+* {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif !important;
+}
+
+/* CV specific typography classes */
+.cv-font {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+}
+
+.cv-title {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1.2;
+}
+
+.cv-subtitle {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-weight: 400;
+  font-size: 1.125rem;
+  line-height: 1.4;
+}
+
+.cv-body {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.cv-caption {
+  font-family: 'Palatino Linotype', 'Book Antiqua', Palatino, serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}

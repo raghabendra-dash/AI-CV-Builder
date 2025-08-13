@@ -1,0 +1,65 @@
+
+{
+  "name": "cv_documents",
+  "options": {
+    "validator": {
+      "$jsonSchema": {
+        "bsonType": "object",
+        "required": ["fileName", "originalContent", "processedContent", "status", "createdAt"],
+        "properties": {
+          "fileName": {
+            "bsonType": "string",
+            "description": "Original filename of uploaded CV"
+          },
+          "fileType": {
+            "bsonType": "string",
+            "enum": ["pdf", "docx", "xlsx", "xls"],
+            "description": "Type of uploaded file"
+          },
+          "originalContent": {
+            "bsonType": "string",
+            "description": "Raw extracted text content from CV"
+          },
+          "processedContent": {
+            "bsonType": "object",
+            "description": "AI-processed and structured CV data"
+          },
+          "formattedContent": {
+            "bsonType": "string",
+            "description": "Final formatted CV content"
+          },
+          "status": {
+            "bsonType": "string",
+            "enum": ["uploaded", "processing", "processed", "formatted", "error"],
+            "description": "Current processing status"
+          },
+          "processingLogs": {
+            "bsonType": "array",
+            "description": "Processing steps and AI agent logs"
+          },
+          "metadata": {
+            "bsonType": "object",
+            "description": "Additional file metadata and processing info"
+          },
+          "creator": {
+            "bsonType": "string",
+            "description": "User who uploaded the CV"
+          },
+          "createdAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Upload timestamp"
+          },
+          "updatedAt": {
+            "bsonType": "string",
+            "title": "datetime",
+            "description": "Last modification timestamp"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "validationLevel": "moderate",
+    "validationAction": "warn"
+  }
+}
